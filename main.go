@@ -9,41 +9,41 @@ type HandleError struct {
 	err error
 }
 
-func (r *HandleError) createSRCFolder() error {
+func createSRCFolder() error {
 	err := os.Mkdir("/src", 0755)
 	return err
 }
 
-func (r *HandleError) createModelsFolder() error {
+func createModelsFolder() error {
 	err := os.Mkdir("/src/models", 0755)
 	return err
 }
 
-func (r *HandleError) createControllersFolder() error {
+func createControllersFolder() error {
 	err := os.Mkdir("/src/controllers", 0755)
 	return err
 }
 
-func (r *HandleError) createEntitiesFolder() error {
+func createEntitiesFolder() error {
 	err := os.Mkdir("/src/entities", 0755)
 	return err
 }
 
-func (r *HandleError) createRoutesFolder() error {
+func createRoutesFolder() error {
 	err := os.Mkdir("/src/routes", 0755)
 	return err
 }
 
 func (r *HandleError) CreateAllProjectStructure() error {
-	r.createSRCFolder()
+	createSRCFolder()
 	time.Sleep(1 * time.Second)
-	r.createModelsFolder()
+	createModelsFolder()
 	time.Sleep(1 * time.Second)
-	r.createControllersFolder()
+	createControllersFolder()
 	time.Sleep(1 * time.Second)
-	r.createEntitiesFolder()
+	createEntitiesFolder()
 	time.Sleep(1 * time.Second)
-	err := r.createRoutesFolder()
+	err := createRoutesFolder()
 	time.Sleep(1 * time.Second)
 	return err
 }
