@@ -1,22 +1,59 @@
 package gpo
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"time"
+)
 
-type Resultado struct {
-	result string
+type HandleError struct {
+	err error
 }
 
-func (r *Resultado) Message(name string) string {
-	result := fmt.Sprintf("Have a nice day %s", name)
-	return result
+func CreateSRCFolder() {
+	err := os.Mkdir("/src", 0755)
+	if err != nil {
+		fmt.Println("Error to create src")
+	}
 }
 
-func (r *Resultado) TestMessage(name string) string {
-	result := fmt.Sprintf("Have a nice night %s", name)
-	return result
+func CreateModelsFolder() {
+	err := os.Mkdir("/src/models", 0755)
+	if err != nil {
+		fmt.Println("Error to create models")
+	}
 }
 
-func (r *Resultado) TestNewMessage(name string) string {
-	result := fmt.Sprintf("Have a nice week %s", name)
-	return result
+func CreateControllersFolder() {
+	err := os.Mkdir("/src/controllers", 0755)
+	if err != nil {
+		fmt.Println("Error to create controllers")
+	}
+}
+
+func CreateEntitiesFolder() {
+	err := os.Mkdir("/src/entities", 0755)
+	if err != nil {
+		fmt.Println("Error to create entities")
+	}
+}
+
+func CreateRoutesFolder() {
+	err := os.Mkdir("/src/routes", 0755)
+	if err != nil {
+		fmt.Println("Error to create routes")
+	}
+}
+
+func CreateAllProjectStructure() {
+	CreateSRCFolder()
+	time.Sleep(1 * time.Second)
+	CreateModelsFolder()
+	time.Sleep(1 * time.Second)
+	CreateControllersFolder()
+	time.Sleep(1 * time.Second)
+	CreateEntitiesFolder()
+	time.Sleep(1 * time.Second)
+	CreateRoutesFolder()
+	time.Sleep(1 * time.Second)
 }
