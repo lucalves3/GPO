@@ -45,7 +45,7 @@ func CreateRoutesFolder() {
 	}
 }
 
-func CreateAllProjectStructure() {
+func (r *HandleError) CreateAllProjectStructure() {
 	CreateSRCFolder()
 	time.Sleep(1 * time.Second)
 	CreateModelsFolder()
