@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-type HandleError struct {
+type CreateStructure struct {
 	err error
 }
 
@@ -34,7 +34,7 @@ func createRoutesFolder() error {
 	return err
 }
 
-func CreateAllProjectStructureFolders() error {
+func (c *CreateStructure) CreateAllProjectStructureFolders() error {
 	createSRCFolder()
 	time.Sleep(1 * time.Second)
 	createModelsFolder()
