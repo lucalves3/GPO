@@ -34,7 +34,7 @@ func (r *HandleError) createRoutesFolder() error {
 	return err
 }
 
-func (r *HandleError) CreateAllProjectStructure() {
+func (r *HandleError) CreateAllProjectStructure() error {
 	r.createSRCFolder()
 	time.Sleep(1 * time.Second)
 	r.createModelsFolder()
@@ -43,6 +43,7 @@ func (r *HandleError) CreateAllProjectStructure() {
 	time.Sleep(1 * time.Second)
 	r.createEntitiesFolder()
 	time.Sleep(1 * time.Second)
-	r.createRoutesFolder()
+	err := r.createRoutesFolder()
 	time.Sleep(1 * time.Second)
+	return err
 }
