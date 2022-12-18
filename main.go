@@ -34,7 +34,7 @@ func createRoutesFolder() error {
 	return err
 }
 
-func CreateAllProjectStructure() error {
+func CreateAllProjectStructureFolders() error {
 	createSRCFolder()
 	time.Sleep(1 * time.Second)
 	createModelsFolder()
