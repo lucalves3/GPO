@@ -1,7 +1,6 @@
 package gpo
 
 import (
-	"fmt"
 	"os"
 	"time"
 )
@@ -10,50 +9,40 @@ type HandleError struct {
 	err error
 }
 
-func CreateSRCFolder() {
+func (r *HandleError) createSRCFolder() error {
 	err := os.Mkdir("/src", 0755)
-	if err != nil {
-		fmt.Println("Error to create src")
-	}
+	return err
 }
 
-func CreateModelsFolder() {
+func (r *HandleError) createModelsFolder() error {
 	err := os.Mkdir("/src/models", 0755)
-	if err != nil {
-		fmt.Println("Error to create models")
-	}
+	return err
 }
 
-func CreateControllersFolder() {
+func (r *HandleError) createControllersFolder() error {
 	err := os.Mkdir("/src/controllers", 0755)
-	if err != nil {
-		fmt.Println("Error to create controllers")
-	}
+	return err
 }
 
-func CreateEntitiesFolder() {
+func (r *HandleError) createEntitiesFolder() error {
 	err := os.Mkdir("/src/entities", 0755)
-	if err != nil {
-		fmt.Println("Error to create entities")
-	}
+	return err
 }
 
-func CreateRoutesFolder() {
+func (r *HandleError) createRoutesFolder() error {
 	err := os.Mkdir("/src/routes", 0755)
-	if err != nil {
-		fmt.Println("Error to create routes")
-	}
+	return err
 }
 
 func (r *HandleError) CreateAllProjectStructure() {
-	CreateSRCFolder()
+	r.createSRCFolder()
 	time.Sleep(1 * time.Second)
-	CreateModelsFolder()
+	r.createModelsFolder()
 	time.Sleep(1 * time.Second)
-	CreateControllersFolder()
+	r.createControllersFolder()
 	time.Sleep(1 * time.Second)
-	CreateEntitiesFolder()
+	r.createEntitiesFolder()
 	time.Sleep(1 * time.Second)
-	CreateRoutesFolder()
+	r.createRoutesFolder()
 	time.Sleep(1 * time.Second)
 }
