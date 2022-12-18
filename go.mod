@@ -1,3 +1,3 @@
-module github.com/lucalves3/GPO
+module github.com/lucalves3/gpo
 
 go 1.19
