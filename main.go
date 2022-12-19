@@ -1,6 +1,7 @@
 package gpo
 
 import (
+	"fmt"
 	"os"
 	"time"
 )
@@ -10,27 +11,37 @@ type CreateStructure struct {
 }
 
 func createSRCFolder() error {
-	err := os.Mkdir("/src", 0755)
+	path, _ := os.Getwd()
+	localFile := fmt.Sprintf("%s/%s", path, "src")
+	err := os.Mkdir(localFile, 0755)
 	return err
 }
 
 func createModelsFolder() error {
-	err := os.Mkdir("/src/models", 0755)
+	path, _ := os.Getwd()
+	localFile := fmt.Sprintf("%s/%s", path, "src/models")
+	err := os.Mkdir(localFile, 0755)
 	return err
 }
 
 func createControllersFolder() error {
-	err := os.Mkdir("/src/controllers", 0755)
+	path, _ := os.Getwd()
+	localFile := fmt.Sprintf("%s/%s", path, "src/controllers")
+	err := os.Mkdir(localFile, 0755)
 	return err
 }
 
 func createEntitiesFolder() error {
-	err := os.Mkdir("/src/entities", 0755)
+	path, _ := os.Getwd()
+	localFile := fmt.Sprintf("%s/%s", path, "src/entities")
+	err := os.Mkdir(localFile, 0755)
 	return err
 }
 
 func createRoutesFolder() error {
-	err := os.Mkdir("/src/routes", 0755)
+	path, _ := os.Getwd()
+	localFile := fmt.Sprintf("%s/%s", path, "src/routes")
+	err := os.Mkdir(localFile, 0755)
 	return err
 }
 
