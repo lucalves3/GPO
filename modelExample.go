@@ -6,7 +6,11 @@ import (
 	"strings"
 )
 
-func CreateModelExampleFile(projectName string, modelName string) {
+type Gpo struct {
+	*Gpo
+}
+
+func (gpo *Gpo) CreateModelExampleFile(projectName string, modelName string) {
 	path, _ := os.Getwd()
 	localFile := fmt.Sprintf("%s/%s", path, "src/models")
 	firstCapitalCase := strings.Title(modelName)
