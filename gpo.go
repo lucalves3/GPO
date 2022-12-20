@@ -60,7 +60,7 @@ func (c *CreateStructure) CreateAllProjectStructureFolders() error {
 	return err
 }
 
-func CreateModelExampleFile(projectName string, modelName string) {
+func (c *CreateStructure) CreateModelExampleFile(projectName string, modelName string) {
 	path, _ := os.Getwd()
 	localFile := fmt.Sprintf("%s/%s", path, "src/models")
 	firstCapitalCase := strings.Title(modelName)
