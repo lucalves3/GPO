@@ -43,10 +43,6 @@ func (c *CreateStructure) CreateControllerExampleFile(projectName string, modelN
 				return
 			}
 			ctx.JSON(http.StatusOK, %s)
-		ctx.JSON(http.StatusUnauthorized, gin.H{
-			"code":    http.StatusUnauthorized,
-			"message": "Token not authorized",
-		})
 	}
 	
 	func Get%sByID(ctx *gin.Context) {
