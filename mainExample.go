@@ -8,7 +8,7 @@ import (
 func (c *CreateStructure) CreateMainFileExample(projectName string) {
 	path, _ := os.Getwd()
 	pathToFile := fmt.Sprintf("%s/%s", path, "/")
-	nameFileWithPath := fmt.Sprintf("%s/%s.go", pathToFile, "main")
+	nameFileWithPath := fmt.Sprintf("%s/%s.go", pathToFile, "mainExample")
 	_, err := os.Stat(nameFileWithPath)
 	if err != nil {
 		file, _ := os.Create(nameFileWithPath)
