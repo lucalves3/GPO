@@ -49,7 +49,7 @@ func (c *CreateStructure) CreateModelExampleFile(projectName string, modelName s
 		return %s, result.Error
 	}
 	
-	func GetAll%ss() ([]entities.%s, error) {
+	func GetAll%s() ([]entities.%s, error) {
 		var %ss []entities.%s
 		result := db.Model(&%ss).Find(&%ss)
 		return %ss, result.Error
