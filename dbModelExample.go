@@ -16,7 +16,7 @@ func (c *CreateStructure) CheckIfIndexDatabaseModelWasCreatedAndCreateIfDontExis
 		fileText := fmt.Sprintf(`package models
 
 		import (
-			"%s/entities"
+			"%s/src/entities"
 			"fmt"
 			"os"
 		

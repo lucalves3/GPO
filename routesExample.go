@@ -16,7 +16,7 @@ func (c *CreateStructure) CreateRoutesFileExample(projectName string) {
 		fileText := fmt.Sprintf(`package routes
 
 		import (
-			"%s/controllers"
+			"%s/src/controllers"
 			"fmt"
 			"os"
 		

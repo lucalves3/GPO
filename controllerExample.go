@@ -22,9 +22,9 @@ func (c *CreateStructure) CreateControllerExampleFile(projectName string, modelN
 	fileText := fmt.Sprintf(`package controllers
 
 	import (
-		"%s/entities"
-		"%s/models"
-		"%s/utils"
+		"%s/src/entities"
+		"%s/src/models"
+		"%s/src/utils"
 		"encoding/json"
 		"fmt"
 		"io/ioutil"

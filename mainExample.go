@@ -16,8 +16,8 @@ func (c *CreateStructure) CreateMainFileExample(projectName string) {
 		fileText := fmt.Sprintf(`package main
 
 		import (
-			"%s/models"
-			"%s/routes"
+			"%s/src/models"
+			"%s/src/routes"
 			"fmt"
 		)
 		

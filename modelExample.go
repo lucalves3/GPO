@@ -22,7 +22,7 @@ func (c *CreateStructure) CreateModelExampleFile(projectName string, modelName s
 	fileText := fmt.Sprintf(`package models
 
 	import (
-		"%s/entities"
+		"%s/src/entities"
 	
 		"gorm.io/gorm"
 	)
@@ -97,7 +97,7 @@ func CheckIfIndexModelWasCreated(projectName string) {
 		fileText := fmt.Sprintf(`package models
 
 		import (
-			"%s/entities"
+			"%s/src/entities"
 			"fmt"
 			"os"
 		
