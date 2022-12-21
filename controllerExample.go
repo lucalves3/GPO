@@ -24,7 +24,6 @@ func (c *CreateStructure) CreateControllerExampleFile(projectName string, modelN
 	import (
 		"%s/src/entities"
 		"%s/src/models"
-		"%s/src/utils"
 		"encoding/json"
 		"fmt"
 		"io/ioutil"
@@ -95,7 +94,7 @@ func (c *CreateStructure) CreateControllerExampleFile(projectName string, modelN
 			"message": "successfully deleted %s",
 		})
 	}
-	`, projectName, projectName, projectName, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase)
+	`, projectName, projectName, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase, firstCapitalCase)
 
 	_, err = file.WriteString(fileText)
 	if err != nil {

@@ -60,6 +60,7 @@ func (c *CreateStructure) CreateModelExampleFile(projectName string, modelName s
 		if err != nil {
 			return err
 		}
+		tx := db.Begin()
 		result := tx.Delete(&%s)
 		if result.Error != nil {
 			return result.Error
