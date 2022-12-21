@@ -75,13 +75,6 @@ func (c *CreateStructure) CreateControllerExampleFile(projectName string, modelN
 			return
 		}
 	
-		hash, passwordError := utils.PasswordEncrypt(new.Password)
-		new.Password = hash
-	
-		if passwordError != nil {
-			fmt.Println("[Error]: Password encrypt error")
-		}
-	
 		err := models.Create%s(new)
 		if err != nil {
 			fmt.Println("Error to create a %s controller")
