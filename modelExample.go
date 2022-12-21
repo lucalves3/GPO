@@ -27,8 +27,6 @@ func (c *CreateStructure) CreateModelExampleFile(projectName string, modelName s
 		"gorm.io/gorm"
 	)
 	
-	var db *gorm.DB
-	
 	func Create%s(%s entities.%s) error {
 		tx := db.Begin()
 		result := tx.Create(&%s)
