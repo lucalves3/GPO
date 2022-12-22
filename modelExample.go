@@ -1,4 +1,4 @@
-package gpo
+package gps
 
 import (
 	"fmt"
@@ -23,8 +23,6 @@ func (c *CreateStructure) CreateModelExampleFile(projectName string, modelName s
 
 	import (
 		"%s/src/entities"
-	
-		"gorm.io/gorm"
 	)
 	
 	func Create%s(%s entities.%s) error {

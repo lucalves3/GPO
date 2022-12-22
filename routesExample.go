@@ -1,4 +1,4 @@
-package gpo
+package gps
 
 import (
 	"fmt"
@@ -40,14 +40,13 @@ func (c *CreateStructure) CreateRoutesFileExample(projectName string) {
 		
 			main := router.Group("api/")
 			{
-				CHANGEHERE := main.Group("example")
+				%s := main.Group("YOUR_ROUTE_HERE")
 				{
-					CHANGEHERE.GET("/", controllers.GetAllCHANGEHERE)
-					CHANGEHERE.GET("/:id", controllers.GetCHANGEHEREByID)
-					CHANGEHERE.POST("/", controllers.CreateCHANGEHERE)
-					CHANGEHERE.DELETE("/:id", controllers.DeleteCHANGEHERE)
+					users.GET("/", controllers.GetAll%s)
+					users.GET("/:id", controllers.Get%sByID)
+					users.POST("/", controllers.Create%s)
+					users.DELETE("/:id", controllers.Delete%s)
 				}
-			}
 			router.Run(fmt.Sprint(":", os.Getenv("APIPORT")))
 		}
 		`, projectName)

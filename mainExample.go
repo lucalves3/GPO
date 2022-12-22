@@ -1,4 +1,4 @@
-package gpo
+package gps
 
 import (
 	"fmt"

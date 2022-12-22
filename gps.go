@@ -1,4 +1,4 @@
-package gpo
+package gps
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 )
 
 type CreateStructure struct {
-	gpo *CreateStructure
+	gps *CreateStructure
 }
 
 func createSRCFolder() error {
