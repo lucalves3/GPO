@@ -6,13 +6,13 @@ import (
 	"strings"
 )
 
-func (c *CreateStructure) CreateModelExampleFile(projectName string, modelName string) {
+func (c *CreateStructure) CreateModelExampleFile(projectName string, entitieName string) {
 	path, _ := os.Getwd()
 	localFile := fmt.Sprintf("%s/%s", path, "src/models")
-	firstCapitalCase := strings.Title(modelName)
-	modelNameString := fmt.Sprintf("%s/%s.go", localFile, modelName)
-	file, err := os.Create(modelNameString)
-	CheckIfIndexModelWasCreated(projectName)
+	firstCapitalCase := strings.Title(entitieName)
+	entitieNameString := fmt.Sprintf("%s/%s.go", localFile, entitieName)
+	file, err := os.Create(entitieNameString)
+	CheckIfIndexModelWasCreated(projectName, entitieName)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -80,7 +80,7 @@ func (c *CreateStructure) CreateModelExampleFile(projectName string, modelName s
 	}
 }
 
-func CheckIfIndexModelWasCreated(projectName string) {
+func CheckIfIndexModelWasCreated(projectName string, entitieName string) {
 	path, _ := os.Getwd()
 	pathToFile := fmt.Sprintf("%s/%s", path, "src/models")
 	nameFileWithPath := fmt.Sprintf("%s/%s.go", pathToFile, "index")
@@ -120,7 +120,7 @@ func CheckIfIndexModelWasCreated(projectName string) {
 		
 		func ConfigDB(db *gorm.DB) {
 		
-			db.AutoMigrate(&entities.CHANGEHERE{})
+			db.AutoMigrate(&entities.%s{})
 		}
 		
 		func CreateConnectionDB() error {
@@ -128,7 +128,7 @@ func CheckIfIndexModelWasCreated(projectName string) {
 			db, err = ConnectDB()
 			return err
 		}
-		`, projectName)
+		`, projectName, entitieName)
 
 		_, err = file.WriteString(fileText)
 		if err != nil {

@@ -6,13 +6,13 @@ import (
 	"strings"
 )
 
-func (c *CreateStructure) CreateControllerExampleFile(projectName string, modelName string) {
+func (c *CreateStructure) CreateControllerExampleFile(projectName string, entitieName string) {
 	path, _ := os.Getwd()
 	localFile := fmt.Sprintf("%s/%s", path, "src/controllers")
-	firstCapitalCase := strings.Title(modelName)
-	modelNameString := fmt.Sprintf("%s/%s.go", localFile, modelName)
-	file, err := os.Create(modelNameString)
-	CheckIfIndexModelWasCreated(projectName)
+	firstCapitalCase := strings.Title(entitieName)
+	entitieNameString := fmt.Sprintf("%s/%s.go", localFile, entitieName)
+	file, err := os.Create(entitieNameString)
+	CheckIfIndexModelWasCreated(projectName, entitieName)
 	if err != nil {
 		fmt.Println(err)
 		return

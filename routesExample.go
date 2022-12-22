@@ -3,12 +3,14 @@ package gps
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 func (c *CreateStructure) CreateRoutesFileExample(projectName string, entitieName string) {
 	path, _ := os.Getwd()
 	pathToFile := fmt.Sprintf("%s/%s", path, "src/routes")
 	nameFileWithPath := fmt.Sprintf("%s/%s", pathToFile, "routes.go")
+	firstCapitalCase := strings.Title(entitieName)
 	_, err := os.Stat(nameFileWithPath)
 	if err != nil {
 		file, _ := os.Create(nameFileWithPath)
@@ -40,16 +42,17 @@ func (c *CreateStructure) CreateRoutesFileExample(projectName string, entitieNam
 		
 			main := router.Group("api/")
 			{
-				%s := main.Group("YOUR_ROUTE_HERE")
+				%s := main.Group("%s")
 				{
-					users.GET("/", controllers.GetAll%s)
-					users.GET("/:id", controllers.Get%sByID)
-					users.POST("/", controllers.Create%s)
-					users.DELETE("/:id", controllers.Delete%s)
+					%s.GET("/", controllers.GetAll%s)
+					%s.GET("/:id", controllers.Get%sByID)
+					%s.POST("/", controllers.Create%s)
+					%s.DELETE("/:id", controllers.Delete%s)
 				}
 			router.Run(fmt.Sprint(":", os.Getenv("APIPORT")))
 		}
-		`, projectName, entitieName, entitieName, entitieName, entitieName, entitieName)
+	}
+		`, projectName, entitieName, entitieName, entitieName, firstCapitalCase, entitieName, firstCapitalCase, entitieName, firstCapitalCase, entitieName, firstCapitalCase)
 
 		_, err = file.WriteString(fileText)
 		if err != nil {

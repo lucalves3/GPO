@@ -23,7 +23,7 @@ func (c *CreateStructure) CreateMainFileExample(projectName string) {
 		
 		var tokenDefense string
 		
-		func main() {
+		func mainExample() {
 		
 			err := models.CreateConnectionDB()
 			if err != nil {
