@@ -1,4 +1,4 @@
-# Go Project Manager
+# Go Project Structure
 
 This manager helps you create simple CRUD routes quickly.
 
