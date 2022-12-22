@@ -31,3 +31,6 @@ This will create the following structure:
 ![Structure image](project_structure.jpg)
 
 And the **mainExample.go** will help you to run your project
+
+Test you route in the path
+http://localhost:3001/api/**entitie_name**
