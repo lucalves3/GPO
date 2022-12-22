@@ -7,7 +7,7 @@ This manager helps you create simple CRUD routes quickly.
 To install **gps**, use the following command:
 
 ```
-go get github.com/lucalves3/gpo
+go get github.com/lucalves3/gps
 ```
 
 # Using the commands
