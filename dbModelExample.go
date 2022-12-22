@@ -32,6 +32,7 @@ func (c *CreateStructure) CheckIfIndexDatabaseModelWasCreatedAndCreateIfDontExis
 			}
 			dsn := fmt.Sprint(os.Getenv("DBUSER"), ":", os.Getenv("DBPASSWORD"), "@tcp(", os.Getenv("DBIP"), ":", os.Getenv("DBPORT"), ")/", os.Getenv("DBSCHEMA"), "?charset=utf8mb4&parseTime=True&loc=Local")
 			fmt.Println(dsn)
+
 			db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 		
 			if err != nil {
