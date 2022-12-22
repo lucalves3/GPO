@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func (c *CreateStructure) CreateRoutesFileExample(projectName string) {
+func (c *CreateStructure) CreateRoutesFileExample(projectName string, entitieName string) {
 	path, _ := os.Getwd()
 	pathToFile := fmt.Sprintf("%s/%s", path, "src/routes")
 	nameFileWithPath := fmt.Sprintf("%s/%s", pathToFile, "routes.go")
@@ -49,7 +49,7 @@ func (c *CreateStructure) CreateRoutesFileExample(projectName string) {
 				}
 			router.Run(fmt.Sprint(":", os.Getenv("APIPORT")))
 		}
-		`, projectName)
+		`, projectName, entitieName, entitieName, entitieName, entitieName, entitieName)
 
 		_, err = file.WriteString(fileText)
 		if err != nil {
