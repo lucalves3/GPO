@@ -19,7 +19,7 @@ go get github.com/lucalves3/gps
 	g.CreateModelExampleFile("module_name", "entitie_name")
 	g.CreateEnvFileExample("module_name")
 	g.CreateMainFileExample("module_name")
-	g.CreateRoutesFileExample("module_name")
+	g.CreateRoutesFileExample("module_name", "entitie_name")
 ```
 
 **module_name**: is the module name in your go.mod
