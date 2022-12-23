@@ -3,12 +3,14 @@ package gps
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
-func (c *CreateStructure) CheckIfIndexDatabaseModelWasCreatedAndCreateIfDontExists(projectName string) {
+func (c *CreateStructure) CheckIfIndexDatabaseModelWasCreatedAndCreateIfDontExists(projectName string, entitieName string) {
 	path, _ := os.Getwd()
 	pathToFile := fmt.Sprintf("%s/%s", path, "src/models")
 	nameFileWithPath := fmt.Sprintf("%s/%s.go", pathToFile, "db")
+	firstCapitalCase := strings.Title(entitieName)
 	_, err := os.Stat(nameFileWithPath)
 	if err != nil {
 		file, _ := os.Create(nameFileWithPath)
@@ -44,7 +46,7 @@ func (c *CreateStructure) CheckIfIndexDatabaseModelWasCreatedAndCreateIfDontExis
 		
 		func ConfigDB(db *gorm.DB) {
 		
-			db.AutoMigrate(&entities.User{}, &entities.Scheduled{}, &entities.Company{})
+			db.AutoMigrate(&entities.%s)
 		}
 		
 		func CreateConnectionDB() error {
@@ -52,7 +54,7 @@ func (c *CreateStructure) CheckIfIndexDatabaseModelWasCreatedAndCreateIfDontExis
 			db, err = ConnectDB()
 			return err
 		}
-		`, projectName)
+		`, projectName, firstCapitalCase)
 
 		_, err = file.WriteString(fileText)
 		if err != nil {
