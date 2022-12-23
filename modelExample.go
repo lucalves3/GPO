@@ -84,7 +84,7 @@ func CheckIfIndexModelWasCreated(projectName string, entitieName string) {
 	path, _ := os.Getwd()
 	pathToFile := fmt.Sprintf("%s/%s", path, "src/models")
 	nameFileWithPath := fmt.Sprintf("%s/%s.go", pathToFile, "index")
-	firstCapitalCase := strings.Title(entitieName)
+	firstCapitalCaseEntitie := strings.Title(entitieName)
 	_, err := os.Stat(nameFileWithPath)
 	if err != nil {
 		file, _ := os.Create(nameFileWithPath)
@@ -129,7 +129,7 @@ func CheckIfIndexModelWasCreated(projectName string, entitieName string) {
 			db, err = ConnectDB()
 			return err
 		}
-		`, projectName, firstCapitalCase)
+		`, projectName, firstCapitalCaseEntitie)
 
 		_, err = file.WriteString(fileText)
 		if err != nil {
